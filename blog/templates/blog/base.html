@@ -9,6 +9,9 @@
     </head>
     <body>
         <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu">NEW POSTAROONI</span></a>
+            {% endif %}
             <h1><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
         </div>
         <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
