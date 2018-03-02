@@ -17,6 +17,8 @@
                 </ul>
             {% endif %}
         </div>
+        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+        <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
         <div class="content container">
                 {% block content %}
 
