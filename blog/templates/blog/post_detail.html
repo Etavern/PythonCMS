@@ -9,7 +9,7 @@
         {% endif %}
         <h1>{{ post.title }}</h1>
         <p>Author: {{ post.author }}</p>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <p>{{ post.markdown_message|linebreaksbr }}</p>
         {% if user.is_authenticated %}
             <a href="{% url 'post_edit' pk=post.pk%}" class="top-menu">EDIT POSTAROONI</span></a>
         {% endif %}

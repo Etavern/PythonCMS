@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from markdown import markdown
+from django.utils.html import mark_safe
 
 
 class Post(models.Model):
@@ -13,6 +15,9 @@ class Post(models.Model):
     def publish(self):
         self.publish_date = timezone.now()
         self.save()
+
+    def markdown_message(self):
+        return mark_safe(markdown(self.text, safe_mode="escape"))
 
     def __str__(self):
         return self.title
