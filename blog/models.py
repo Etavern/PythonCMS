@@ -12,12 +12,12 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     publish_date = models.DateTimeField(blank=True, null=True)
 
+    def markdown_message(self):
+        return mark_safe(markdown(self.text, safe_mode="escape"))
+
     def publish(self):
         self.publish_date = timezone.now()
         self.save()
-
-    def markdown_message(self):
-        return mark_safe(markdown(self.text, safe_mode="escape"))
 
     def __str__(self):
         return self.title
