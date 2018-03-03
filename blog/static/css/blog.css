@@ -16,17 +16,31 @@ h2{
 
 .page-header{
     background-color: orange;
-    padding: 10px 0 5px 0;
+    padding: 10px 0 0 0;
 }
 
+#top-menu{
+    float: right;
+}
+
+#top-menu img{
+    width: 50px;
+    height: 50px;
+    display: inline;
+}
+
+#top-menu p{
+    display: inline;
+    font-size: 20px;
+
+}
 
 #header{
     display: inline;
-
+    line-height: 2.8;
 }
 
-.top-menu{
-    float: right;
+.page-header ul{
     font-size: 20px;
     list-style-type: none;
     margin: 0;
@@ -34,7 +48,7 @@ h2{
 
 }
 
-.top-menu li{
+.page-header li{
     display: inline;
     float: left;
     padding-right: 5px;

@@ -4,7 +4,7 @@
 
 {% if user.is_authenticated %}
     <div>
-        <img src="../static/{{ avi }}">
+        <img src="../static/{{ avi }}" width="200px" height="200px">
         <p>Username: {{ user.username }}</p>
         <p>Email: {{ user.email }}</p>
         <form method="POST">

@@ -9,16 +9,23 @@
     <body>
         <div class="page-header">
             <h1 id="header"><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
-                <ul class="top-menu">
-            {% if user.is_authenticated %}
-                    <li><a href="{% url 'post_new' %}">+</a></li>
-                    <li><a href="{% url 'account' %}">Account</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {% else %}
-                    <li><a href="{% url 'login' %}">Log in</a></li>
-                    <li><a href="{% url 'signup' %}">Sign up</a></li>
-            {% endif %}
-                </ul>
+                {% if user.is_authenticated %}
+
+                    <div id="top-menu">
+                        <p>Hello, {{ user.username }}</p>
+                        <img src="../static/{{ avi }}">
+                        <ul>
+                            <li><a href="{% url 'post_new' %}">+</a></li>
+                            <li><a href="{% url 'account' %}">Account</a></li>
+                            <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        </ul>
+                {% else %}
+                        <ul class="top-menu">
+                            <li><a href="{% url 'login' %}">Log in</a></li>
+                            <li><a href="{% url 'signup' %}">Sign up</a></li>
+                {% endif %}
+                    </ul>
+                </div>
         </div>
 
         <div class="content container">
