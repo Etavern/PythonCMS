@@ -55,6 +55,6 @@ def signup(request):
             user = form.save()
             auth_login(request, user)
             return redirect('post_list')
-        else:
-            form = UserSignUp()
-    return render(request, 'signup.html', {'form': form})
+    else:
+        form = UserSignUp()
+    return render(request, 'blog/signup.html', {'form': form})

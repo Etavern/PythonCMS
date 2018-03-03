@@ -2,28 +2,27 @@
 <html>
     <head>
         <title>THE BEST DAMN BLOG FOREVER</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
         <div class="page-header">
+            <h1 id="header"><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
             {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu">NEW POSTAROONI</span></a>
+                <ul class="top-menu">
+                    <li><a href="{% url 'post_new' %}">+</a></li>
+                    <li><a href="">Account</a></li>
+                    <li><a href="">Log Out</a></li>
+                </ul>
             {% endif %}
-            <h1><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
         </div>
         <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
         <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
         <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
                 {% block content %}
 
                 {% endblock %}
-                </div>
-            </div>
         </div>
     </body>
 </html>
