@@ -55,7 +55,7 @@ ROOT_URLCONF = 'cms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'blog/templates/blog')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

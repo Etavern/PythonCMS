@@ -9,16 +9,18 @@
     <body>
         <div class="page-header">
             <h1 id="header"><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
-            {% if user.is_authenticated %}
                 <ul class="top-menu">
+            {% if user.is_authenticated %}
                     <li><a href="{% url 'post_new' %}">+</a></li>
                     <li><a href="">Account</a></li>
-                    <li><a href="">Log Out</a></li>
-                </ul>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+                    <li><a href="{% url 'login' %}">Log in</a></li>
+                    <li><a href="{% url 'signup' %}">Sign up</a></li>
             {% endif %}
+                </ul>
         </div>
-        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-        <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+
         <div class="content container">
                 {% block content %}
 
