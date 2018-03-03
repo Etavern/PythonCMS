@@ -52,6 +52,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cms.urls'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/static/')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>THE BEST DAMN BLOG FOREVER</title>
-        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/reset.css' %}">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
@@ -12,7 +12,7 @@
                 <ul class="top-menu">
             {% if user.is_authenticated %}
                     <li><a href="{% url 'post_new' %}">+</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="{% url 'account' %}">Account</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
                     <li><a href="{% url 'login' %}">Log in</a></li>
