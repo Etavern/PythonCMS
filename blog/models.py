@@ -22,7 +22,3 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
-class Avi(models.Model):
-    user = models.OneToOneField(User)
-    avatar = models.ImageField(upload_to='img/avis/', default='img/avis/no-img.jpg')

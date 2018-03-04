@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'avatar',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cms.urls'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/static/')
+
+AVATAR_DEFAULT_URL = BASE_DIR.join('/avatars/default.jpeg')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/static')
+MEDIA_URL = 'http://127.0.0.1:8000/static/'
+
+AVATAR_STORAGE_DIR = 'avatars/'
 
 TEMPLATES = [
     {
@@ -83,7 +90,7 @@ DATABASES = {
     }
 }
 
-LOGIN_REDIRECT_URL = 'post_list'
+LOGIN_REDIRECT_URL = 'account'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

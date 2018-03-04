@@ -16,7 +16,7 @@ h2{
 
 .page-header{
     background-color: orange;
-    padding: 10px 0 0 0;
+    padding: 10px 0 5px 0;
 }
 
 #top-menu{
@@ -37,7 +37,7 @@ h2{
 
 #header{
     display: inline;
-    line-height: 2.8;
+    line-height: 1.15;
 }
 
 .page-header ul{
@@ -52,4 +52,20 @@ h2{
     display: inline;
     float: left;
     padding-right: 5px;
+}
+
+.post, .account, .edit, .reset{
+    border: 2px solid black;
+    background: orange;
+    padding: 5px;
+    margin: 5px;
+}
+
+.post *{
+    padding: 5px;
+}
+
+.post .author{
+    border-bottom: 2px solid black;
+    display: inline;
 }

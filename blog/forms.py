@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Post, Avi
+from .models import Post
 from django.core.files.images import get_image_dimensions
 
 
@@ -19,11 +19,10 @@ class UserSignUp(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2',)
 
 
-class UserAviForm(forms.ModelForm):
+class PasswordResetForm(UserCreationForm):
     class Meta:
-        model = Avi
-        fields = ('avatar', )
-
+        model = User
+        fields = ('password1', 'password2')
 
 
 

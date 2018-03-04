@@ -1,4 +1,6 @@
 {% load staticfiles %}
+
+
 <html>
     <head>
         <title>THE BEST DAMN BLOG FOREVER</title>
@@ -9,22 +11,21 @@
     <body>
         <div class="page-header">
             <h1 id="header"><a href="/">THIS IS THE BEST DAMN BLOG LOVE US</a></h1>
+                <div id="top-menu">
                 {% if user.is_authenticated %}
-
-                    <div id="top-menu">
                         <p>Hello, {{ user.username }}</p>
-                        <img src="../static/{{ avi }}">
                         <ul>
                             <li><a href="{% url 'post_new' %}">+</a></li>
                             <li><a href="{% url 'account' %}">Account</a></li>
                             <li><a href="{% url 'logout' %}">Log Out</a></li>
                         </ul>
                 {% else %}
-                        <ul class="top-menu">
+                        <ul>
                             <li><a href="{% url 'login' %}">Log in</a></li>
                             <li><a href="{% url 'signup' %}">Sign up</a></li>
+
+                        </ul>
                 {% endif %}
-                    </ul>
                 </div>
         </div>
 

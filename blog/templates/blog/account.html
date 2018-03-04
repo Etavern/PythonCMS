@@ -1,18 +1,19 @@
 {% extends 'blog/base.html' %}
-
+{% load avatar_tags %}
 {% block content %}
 
 {% if user.is_authenticated %}
-    <div>
-        <img src="../static/{{ avi }}" width="200px" height="200px">
+    <div class="account">
+        {% avatar user %}
         <p>Username: {{ user.username }}</p>
         <p>Email: {{ user.email }}</p>
         <form method="POST">
             {% csrf_token %}
-
-            {{ form2.as_p }}
+            {{ form.as_p }}
             <button type="submit" class="save btn btn-default">Save</button>
         </form>
+        <a href="{% url 'avatar_change' %}">Change your avatar</a>
+
     </div>
 
 {% endif %}
