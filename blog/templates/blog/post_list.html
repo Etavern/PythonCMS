@@ -6,6 +6,12 @@
 			<h1></h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 			<p>Author: {{ post.author }}</p>
 			<p>{{ post.publish_date }}</p>
+            {% if user.is_authenticated %}
+                {% ifequal notnew 'yes' %}
+            <p><a href="{% url 'post_edit' pk=post.pk %}" class="top-menu">EDIT POST</a></p>
+            <p><a href="{% url 'post_delete' pk=post.pk %}">DELETE POST</a></p>
+                {% endifequal %}
+            {% endif %}
 		</div>
 	{% endfor %}
 {% endblock %}

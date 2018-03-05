@@ -12,8 +12,12 @@
         {% avatar post.author %}
         <p class="author">Author: {{ post.author }}</p>
         <p>{{ post.markdown_message|linebreaksbr }}</p>
+        {{ edit }}
         {% if user.is_authenticated %}
-            <a href="{% url 'post_edit' pk=post.pk%}" class="top-menu">EDIT POST</a>
+            {% ifequal notnew 'yes' %}
+                <p><a href="{% url 'post_edit' pk=post.pk %}" class="top-menu">EDIT POST</a></p>
+                <p><a href="{% url 'post_delete' pk=post.pk %}">DELETE POST</a></p>
+            {% endifequal %}
         {% endif %}
     </div>
 
